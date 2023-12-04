@@ -1,0 +1,24 @@
+<a *ngIf="!service.isUserLoggedIn" routerLink="login" class="mat-button-link">
+    <button mat-raised-button color="accent">Login</button>
+</a>&nbsp;
+<a *ngIf="service.isUserLoggedIn" routerLink="students" class="mat-button-link">
+    <button mat-raised-button color="primary">Students</button>
+</a>&nbsp;
+<a routerLink="about-us" class="mat-button-link">
+    <button mat-raised-button color="accent">About Us</button>
+</a>&nbsp;
+<a routerLink="contact-us" class="mat-button-link">
+    <button mat-raised-button color="primary">Contact Us</button>
+</a>&nbsp;
+<a *ngIf="service.isUserLoggedIn" routerLink="add-student" class="mat-button-link">
+    <button mat-raised-button color="primary">Add Student</button>
+</a>&nbsp;
+<a *ngIf="!service.isUserLoggedIn" routerLink="register" class="mat-button-link">
+    <button mat-raised-button color="primary">Register</button>
+</a>&nbsp;
+<a *ngIf="service.isUserLoggedIn" routerLink="profile-update" class="mat-button-link">
+    <button mat-raised-button color="primary">Edit My Profile</button>
+</a>&nbsp;
+<a *ngIf="service.isUserLoggedIn" routerLink="logout" class="mat-button-link">
+    <button mat-raised-button color="primary">Logout</button>
+</a>&nbsp;

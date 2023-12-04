@@ -1,0 +1,23 @@
+<form (ngSubmit)="PerformUpdation()">
+    <h2>My Profile</h2>
+    <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput type="text" placeholder="username" name="username" [(ngModel)]="username" readonly>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="password" name="password" [(ngModel)]="password" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Select an option</mat-label>
+        <mat-select [(value)]="role">
+            <mat-option value="admin">Admin</mat-option>
+            <mat-option value="user">User</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <br>
+    <button mat-raised-button color="primary">Register</button>
+</form>

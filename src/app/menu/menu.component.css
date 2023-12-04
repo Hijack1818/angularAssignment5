@@ -1,0 +1,10 @@
+.mat-button-link {
+    text-decoration: none; /* Remove default hyperlink underline */
+    display: inline-block; /* Make it behave like a block element */
+    cursor: pointer; /* Set cursor to pointer for better user interaction */
+  }
+  
+  .mat-button-link:hover {
+    background-color: #e0e0e0; /* Change background color on hover if desired */
+  }
+  

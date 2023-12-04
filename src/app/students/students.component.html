@@ -1,0 +1,86 @@
+<app-sort></app-sort>
+<!-- <p><button (click) = "showStudents()"> Show Students </button></p> -->
+<mat-table *ngIf="students.length > 0" [dataSource]="students" class="mat-elevation-z8">
+
+    <!-- Define the columns -->
+    <ng-container matColumnDef="rollno">
+        <mat-header-cell *matHeaderCellDef>Roll No</mat-header-cell>
+        <mat-cell *matCellDef="let s">{{ s.rollno }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let s">{{ s.name | uppercase }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="numberOfAttempts">
+        <mat-header-cell *matHeaderCellDef>Attempts</mat-header-cell>
+        <mat-cell *matCellDef="let s">{{ s.numberOfAttempts }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="percentage">
+        <mat-header-cell *matHeaderCellDef>Percentage</mat-header-cell>
+        <mat-cell *matCellDef="let s">{{ s.percentage / 100 | percent }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="subjectsLearning">
+        <mat-header-cell *matHeaderCellDef>Subjects</mat-header-cell>
+        <mat-cell *matCellDef="let s">
+            <ul>
+                <li *ngFor="let sub of s.subjectsLearning">{{ sub }}</li>
+            </ul>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+        <mat-cell *matCellDef="let s">
+            <button mat-raised-button color="accent" *ngIf="roleOfTheUser()" class="btnDelete"
+                (click)="deleteStudent(s.rollno)">Delete</button>
+            <button mat-raised-button color="primary" (click)="updateStudent(s)">Update</button>
+        </mat-cell>
+    </ng-container>
+
+    <!-- Define the header row -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <!-- Define the row -->
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<!-- <table *ngIf="students.length>0">
+    <thead>
+        <tr>
+            <th>Roll No</th>
+            <th>Names</th>
+            <th>Attempts</th>
+            <th>Percentage</th>
+            <th>Subjects</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of students">
+            <td>{{s.rollno}}</td>
+            <td>{{s.name | uppercase}}</td>
+            <td>{{s.numberOfAttempts}}</td>
+            <td>{{s.percentage/100 | percent}}</td>
+            <td>
+                <ul *ngFor="let sub of s.subjectsLearning">
+                    <li>{{sub}}</li>
+                </ul>
+            </td>
+            <td>
+
+                <button mat-raised-button color="accent" *ngIf="roleOfTheUser()" class="btnDelete"
+                    (click)="deleteStudent(s.rollno)">Delete</button>&nbsp;
+                <button mat-raised-button color="primary" (click)="updateStudent(s)">Update</button> -->
+<!-- <button mat-raised-button (click)="" color="warn">Delete</button> -->
+<!-- <button mat-raised-button (click)="updateStudent(s)" color="primary">Update</button> 
+</td>
+</tr>
+</tbody>
+</table> -->
+<span [class]="colorClass">{{message}}</span>
+<app-student-update *ngIf="updateClicked" [updatedStudent]="selectedStudent"
+    (studentEmitter)="doUpdate($event)"></app-student-update>
