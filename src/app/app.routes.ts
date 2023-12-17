@@ -7,6 +7,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { RegisterComponent } from './register/register.component';
 import { authGuard } from './auth.guard';
 import { ProfileUpdateComponent } from './profile-update/profile-update.component';
+import { AddStudentComponent } from './add-student/add-student.component';
 
 export const routes: Routes = [
     {path:'students',component:StudentsComponent,canActivate:[authGuard]},
@@ -16,4 +17,5 @@ export const routes: Routes = [
     {path:'contact-us',component:ContactUsComponent},
     {path:'logout',component:LogoutComponent},
     {path: 'profile-update', component:ProfileUpdateComponent},
+    {path: 'add-student', component:AddStudentComponent},
 ];

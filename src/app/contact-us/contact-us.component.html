@@ -1,29 +1,19 @@
-
-    <form >
-        <h3>Contact us</h3>
-        <div >
-            <label >Your name</label>
-            <div>
-                <input type="text"  name="Name" required>
-            </div>
-        </div>
-
-        <div>
-            <label>Your email address</label>
-            <div >
-                <input type="email"  name="Email" required>
-            </div>
-        </div>
-
-        <div>
-            <label>Your message</label>
-            <div>
-                <textarea  name="Message"  rows="6" maxlength="3000" required></textarea>
-            </div>
-        </div>
-
-        <div >
-            <button type="submit">Send Message</button>
-        </div>
-
-    </form>
+<form>
+    <h3>Contact us</h3>
+    <mat-form-field>
+        <mat-label>Your name</mat-label>
+        <input matInput type="text" name="Name" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Your email address</mat-label>
+        <input matInput type="email" name="Email" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Your message</mat-label>
+        <textarea matInput name="Message" rows="6" maxlength="3000" required></textarea>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit">Send Message</button>
+</form>

@@ -1,9 +1,26 @@
-<form (ngSubmit)="performUpdate()">
-    <h2>Update Form</h2>
-    RollNo<input type="text" [(ngModel)]="updatedStudent.rollno" name="rollno" readonly><br>
-    Name<input type="text" [(ngModel)]="updatedStudent.name" name="name" readonly><br>
-    Attemps<input type="number" [(ngModel)]="updatedStudent.numberOfAttempts" name="numberOfAttempts" ><br>
-    Percenage<input type="number" [(ngModel)]="updatedStudent.percentage" name="percentage" ><br>
-    Subjects<input type="text" [(ngModel)]="updatedStudent.subjectsLearning" name="subjectsLearning" ><br>
-    <input type="submit" value="Update">
-</form>
+<mat-dialog-content>
+    <form (ngSubmit)="performUpdate()">
+        <h2>Update Form</h2>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="data.rollno" name="rollno" readonly>
+            <mat-label>RollNo</mat-label>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="data.name" name="name" readonly>
+            <mat-label>Name</mat-label>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" [(ngModel)]="data.numberOfAttempts" name="numberOfAttempts">
+            <mat-label>Attempts</mat-label>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" [(ngModel)]="data.percentage" name="percentage">
+            <mat-label>Percentage</mat-label>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="data.subjectsLearning" name="subjectsLearning">
+            <mat-label>Subjects</mat-label>
+        </mat-form-field>
+        <button mat-raised-button color="accent" type="submit">Update</button>
+    </form>
+</mat-dialog-content>

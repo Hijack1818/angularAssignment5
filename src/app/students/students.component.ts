@@ -7,6 +7,7 @@ import { SortComponent } from '../sort/sort.component';
 import { StudentRestService } from '../service/student-rest.service';
 import { UserRestService } from '../service/user-rest.service';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-students',
@@ -24,7 +25,7 @@ export class StudentsComponent {
     colorClass:string=""
     updateClicked:boolean = false
     selectedStudent!:Student
-    constructor(private service:StudentRestService,private userService:UserRestService){//private service is dependency injection.service is variable we can keep anything
+    constructor(private service:StudentRestService,private userService:UserRestService,private dialog:MatDialog){//private service is dependency injection.service is variable we can keep anything
       // service.findAllStudents().subscribe(
       //   response=>this.students=response
       this.showStudents();
@@ -59,7 +60,8 @@ export class StudentsComponent {
 
   updateStudent(s:Student){
     this.selectedStudent=s
-    this.updateClicked = true
+    this.dialog.open(StudentUpdateComponent,{data:s});
+    // this.updateClicked = true
   }
   doUpdate(updateStudent:Student){
 

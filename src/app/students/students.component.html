@@ -82,5 +82,10 @@
 </tbody>
 </table> -->
 <span [class]="colorClass">{{message}}</span>
-<app-student-update *ngIf="updateClicked" [updatedStudent]="selectedStudent"
-    (studentEmitter)="doUpdate($event)"></app-student-update>
+
+
+<!--this is used when we are sending data from parent to child and in child we have @input and @output
+    to receive and send data respectively
+-->
+<!-- <app-student-update *ngIf="updateClicked" [updatedStudent]="selectedStudent"
+    (studentEmitter)="doUpdate($event)"></app-student-update> -->

@@ -30,5 +30,6 @@ export class StudentRestService {
   updateStudent(s:Student):Observable<Student>{
     return this.http.put<Student>(this.BASE_URL,s)
   }
+
 }
 

@@ -1,0 +1,28 @@
+<!-- FILEPATH: /d:/VW/day26 angular-boot/1-SMSApp_v1/src/app/add-student/add-student.component.html -->
+<div>
+    <h2>Add Student</h2>
+    <form (ngSubmit)="PerformAddStudent()">
+        <mat-form-field>
+            <mat-label>Roll No:</mat-label>
+            <input matInput type="text" id="rollno" name="rollno" [(ngModel)]="rollno">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Name:</mat-label>
+            <input matInput type="text" id="name" name="name" [(ngModel)]="name">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Number of Attempts:</mat-label>
+            <input matInput type="number" id="numberOfAttempts" name="numberOfAttempts" [(ngModel)]="numberOfAttempts">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Percentage:</mat-label>
+            <input matInput type="number" id="percentage" name="percentage" [(ngModel)]="percentage">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Subjects Learning:</mat-label>
+            <input matInput type="text" id="subjectsLearning" name="subjectsLearning" [(ngModel)]="subjectsLearning">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Add Student</button>
+    </form>
+    <p *ngIf="message">{{ message }}</p>
+</div>

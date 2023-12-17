@@ -70,4 +70,12 @@ export class UserRestService {
     return false
   }
 
+  public getUserName():string{
+    return sessionStorage.getItem('username')+''
+  }
+
+  public getRole():string{
+    return sessionStorage.getItem('role')+''
+  }
+
 }

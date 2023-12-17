@@ -19,8 +19,9 @@ import { LoginComponent } from '../login/login.component';
 export class ProfileUpdateComponent {
 
 
-  constructor(private r:Router,private service:UserRestService,private user:LoginComponent){
-    this.username = this.user.username
+  constructor(private r:Router,private service:UserRestService){
+    this.username=this.service.getUserName();
+    this.role=this.service.getRole();
   }
 
   username:string=''
@@ -29,10 +30,15 @@ export class ProfileUpdateComponent {
 
   PerformUpdation() {
     console.log(this.username, this.password, this.role)
-    if(this.service.PerformUpdation(this.username,this.password,this.role).subscribe()){
-      // show students view to user
-      this.r.navigate(['students']) //this is programmatic navigation
-    }
+    this.service.PerformUpdation(this.username,this.password,this.role).subscribe(res=>{
+
+
+
+    })
+    // if(this.service.PerformUpdation(this.username,this.password,this.role).subscribe()){
+    //   // show students view to user
+    //   this.r.navigate(['students']) //this is programmatic navigation
+    // }
   }
 
 }
